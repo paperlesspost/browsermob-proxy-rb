@@ -5,7 +5,7 @@ module BrowserMob
   module Proxy
 
     class Server
-      attr_reader :port
+      attr_reader :port, :host
 
       def initialize(path, opts = {})
         unless File.exist?(path)
@@ -18,6 +18,7 @@ module BrowserMob
 
         @path = path
         @port = Integer(opts[:port] || 8080)
+        @host = String(opts[:host] || "localhost")
 
         @process = ChildProcess.new(path, "--port", port.to_s)
         @process.io.inherit! if opts[:log]
@@ -34,7 +35,7 @@ module BrowserMob
       end
 
       def url
-        "http://localhost:#{port}"
+        "http://#{host}:#{port}"
       end
 
       def create_proxy
