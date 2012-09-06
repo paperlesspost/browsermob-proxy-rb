@@ -43,7 +43,7 @@ module BrowserMob
 
         params[:initialPageRef] = ref if ref
         params[:captureHeaders] = true if opts[:capture_headers]
-
+        params[:captureContent] = true if opts[:capture_content]
 
         previous = @resource["har"].put params
         HAR::Archive.from_string(previous) unless previous.empty?
