@@ -112,6 +112,11 @@ module BrowserMob
       def close
         @resource.delete
       end
+
+      def remap_host(from_host, to_host)
+        payload = {from_host => to_host}.to_json
+        @resource["hosts"].post(payload, :content_type => "application/json")
+      end
     end # Client
 
   end # Proxy
