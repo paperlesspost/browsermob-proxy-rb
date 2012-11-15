@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "rest-client"
   s.add_runtime_dependency "childprocess"
   s.add_runtime_dependency "multi_json", "~> 1.0"
-  s.add_runtime_dependency "har"
+  s.add_runtime_dependency "har", "0.0.10.paperlesspost"
 
   s.add_development_dependency "rspec", ">= 2.5.0"
   s.add_development_dependency "selenium-webdriver", "~> 2.7"
