@@ -1,5 +1,5 @@
 module BrowserMob
   module Proxy
-    VERSION = "0.0.12.paperless"
+    VERSION = "0.0.14.paperless"
   end
 end
