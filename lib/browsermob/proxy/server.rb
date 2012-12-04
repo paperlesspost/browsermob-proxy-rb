@@ -1,5 +1,6 @@
 require 'childprocess'
 require 'socket'
+require "pathname"
 
 module BrowserMob
   module Proxy
@@ -22,6 +23,15 @@ module BrowserMob
 
         @process = ChildProcess.new(path, "--port", port.to_s)
         @process.io.inherit! if opts[:log]
+
+        if log_pathname = opts[:log_pathname]
+          log_pathname = Pathname.new(log_pathname)
+          raise ArgumentError unless log_pathname.dirname.exist?
+
+          log_file = log_pathname.open("w")
+          @process.io.stdout = log_file
+          @process.io.stderr = log_file
+        end
       end
 
       def start
