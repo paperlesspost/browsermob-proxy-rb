@@ -1,6 +1,8 @@
 browsermob-proxy-rb
 ===================
 
+**Note that this fork is not currently maintained.  Please refer to [jarib/browsermob-proxy-rb](https://github.com/jarib/browsermob-proxy-rb)**
+
 Ruby client for the BrowserMob Proxy 2.0 REST API.
 
 [![Build Status](https://secure.travis-ci.org/jarib/browsermob-proxy-rb.png)](http://travis-ci.org/jarib/browsermob-proxy-rb)
@@ -95,4 +97,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
